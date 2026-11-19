@@ -1,0 +1,268 @@
+/* Hampton Inn & Suites Gainesville-Downtown — offering microsite
+   Recreated from the original Squarespace page. Layout mirrors its 24-column
+   fluid grid on desktop and stacks in reading order on phones. */
+
+/* ---------- Tokens ---------- */
+:root {
+  --green: #036242;
+  --orange: #f2714e;
+  --blue: #083995;
+  --black: #000;
+  --white: #fff;
+  --font: "aktiv-grotesk", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --gap: 11px;
+  --margin: clamp(16px, 2.27vw, 32.5px);
+  --row: clamp(22px, 2.04vw, 33px);
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--white);
+  background: var(--black);
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+a { color: inherit; }
+h1, h2, h3 { margin: 0 0 .5rem; font-weight: 700; text-transform: uppercase; }
+h1, h2 { font-size: clamp(26px, 2.57vw, 36.88px); line-height: 1.333; }
+h3 { font-size: clamp(21px, 1.84vw, 26.44px); line-height: 1.366; }
+p { margin: .5rem 0 1rem; }
+p:last-child { margin-bottom: 0; }
+.center { text-align: center; }
+.nowrap { white-space: nowrap; }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  padding: 29px 0 0 43.5px;
+  pointer-events: none;
+}
+.site-header a { display: inline-block; pointer-events: auto; }
+.site-header img { width: auto; height: 50px; }
+
+/* ---------- Sections ---------- */
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: clamp(48px, 6.6vw, 110px) 0;
+}
+.section-bg { position: absolute; inset: 0; z-index: 0; }
+.section-bg img { width: 100%; height: 100%; object-fit: cover; }
+.section-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--overlay, transparent);
+  opacity: var(--overlay-opacity, 0);
+}
+
+.hero       { min-height: 100vh; background: var(--black); --overlay: var(--black); --overlay-opacity: .25; }
+.intro      { min-height: 40vh;  background: var(--green); }
+.facts      { background: var(--black); }
+.highlights { min-height: 33vh;  background: var(--white); --overlay: var(--white); --overlay-opacity: .15; }
+.uf         { background: var(--orange); }
+.medical    { min-height: 66vh;  background: var(--green); }
+.acsec      { min-height: 66vh;  background: var(--white); color: var(--black); }
+.cashflow   { min-height: 66vh;  background: var(--green); color: var(--orange); --overlay: var(--green); --overlay-opacity: .15; }
+.hilton     { min-height: 66vh;  background: var(--black); }
+.hilton .copy p { text-align: justify; }
+.map        { min-height: 66vh;  background: var(--blue); }
+.site-footer { min-height: 33vh; background: var(--green); padding: clamp(40px, 6.2vw, 89px) 0; }
+
+/* ---------- Blocks ---------- */
+.grid { position: relative; z-index: 1; width: 100%; max-width: 1600px; margin: 0 auto; }
+.blk { position: relative; min-width: 0; }
+.blk.photo { overflow: hidden; }
+.blk.photo img,
+.blk.logo img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.blk.photo img { object-fit: cover; }
+.blk.logo img { object-fit: contain; }
+.blk.text { align-self: start; }
+.blk.v-center { align-self: center; }
+.blk.panel {
+  padding: clamp(18px, 1.85vw, 26.5px);
+  background: rgba(0, 0, 0, .78);
+  border-radius: 30px;
+}
+.caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  margin: 0;
+  padding: 24px 8px 6px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  color: var(--white);
+  background: linear-gradient(to top, rgba(0, 0, 0, .55), transparent);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 58px;
+  padding: 0 clamp(16px, 2.42vw, 34.7px);
+  font-size: clamp(13px, 1.1vw, 16px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: .02em;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--white);
+  background: var(--orange);
+  border: 2px solid var(--white);
+  border-radius: 6.4px;
+  transition: opacity .15s ease;
+}
+.btn:hover { opacity: .8; }
+.btn:focus-visible { outline: 3px solid var(--white); outline-offset: 3px; }
+
+/* ---------- Property table ---------- */
+.table-container { max-width: 100%; margin: 0 auto; overflow-x: auto; }
+.prop-table { width: 100%; min-width: 150px; border-collapse: collapse; }
+.prop-table tr { border-bottom: 1px solid var(--white); }
+.prop-table tr:last-child { border-bottom: none; }
+.prop-table tr:hover { background-color: rgba(227, 255, 254, .15); }
+.prop-table th,
+.prop-table td { padding: 15px 10px; line-height: 25px; text-align: left; vertical-align: middle; }
+.prop-table th {
+  max-width: 180px;
+  padding: 25px 5px 25px 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.prop-table ul { margin: 0; padding-left: 20px; }
+
+/* ---------- Contacts ---------- */
+.contacts { margin: 0 0 10px; overflow: hidden; }
+.contacts + .contacts { clear: left; }
+.contacts h2 {
+  margin: 0 0 10px;
+  padding-top: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: .1em;
+  border-bottom: 1px solid var(--white);
+}
+.contact {
+  float: left;
+  width: 320px;
+  max-width: 100%;
+  margin: 20px 20px 20px 0;
+  font-size: .95em;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.4em;
+  letter-spacing: .02em;
+}
+.contact strong { font-weight: 700; }
+.contact a { text-decoration: none; }
+.contact a:hover { text-decoration: underline; }
+
+/* ---------- Desktop: 24-column grid (positions copied from the Squarespace layout) ---------- */
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: var(--margin) repeat(24, minmax(0, 1fr)) var(--margin);
+    grid-auto-rows: minmax(var(--row), auto);
+    gap: var(--gap);
+  }
+  .pair { display: contents; }
+
+  .hero .hampton-logo       { grid-area: 1 / 11 / 5 / 17; }
+  .hero .title              { grid-area: 5 / 7 / 8 / 21; }
+
+  .intro .summary           { grid-area: 1 / 6 / 8 / 22; }
+  .intro .cta-download      { grid-area: 9 / 6 / 11 / 13; }
+  .intro .cta-sign          { grid-area: 9 / 15 / 11 / 22; }
+
+  .facts .hampton-logo      { grid-area: 1 / 4 / 4 / 12; }
+  .facts .table             { grid-area: 4 / 4 / 25 / 12; }
+  .facts .exterior          { grid-area: 1 / 12 / 13 / 24; }
+  .facts .lobby             { grid-area: 13 / 12 / 25 / 24; }
+  .facts .amenity           { grid-area: 25 / 4 / 35 / 12; }
+  .facts .room              { grid-area: 25 / 12 / 35 / 24; }
+
+  .highlights .title        { grid-area: 2 / 5 / 4 / 23; }
+
+  .uf .campus               { grid-area: 1 / 4 / 17 / 24; }
+  .uf .copy                 { grid-area: 17 / 4 / 26 / 24; }
+  .uf .gate                 { grid-area: 26 / 4 / 32 / 12; }
+  .uf .gators-script        { grid-area: 32 / 4 / 35 / 9; }
+  .uf .gators-gator         { grid-area: 32 / 9 / 35 / 12; }
+  .uf .stadium              { grid-area: 26 / 12 / 37 / 24; }
+  .uf .phillips             { grid-area: 35 / 4 / 43 / 12; }
+  .uf .museum               { grid-area: 37 / 12 / 43 / 18; }
+  .uf .ballpark             { grid-area: 37 / 18 / 43 / 24; }
+
+  .medical .ufhealth-logo   { grid-area: 2 / 4 / 6 / 10; }
+  .medical .gator           { grid-area: 6 / 5 / 11 / 8; }
+  .medical .copy            { grid-area: 1 / 10 / 7 / 24; }
+  .medical .campus          { grid-area: 7 / 10 / 12 / 17; }
+  .medical .shands          { grid-area: 7 / 17 / 12 / 24; }
+
+  .acsec .arena             { grid-area: 1 / 4 / 15 / 24; }
+  .acsec .copy              { grid-area: 15 / 4 / 23 / 24; }
+  .acsec .track             { grid-area: 23 / 4 / 30 / 14; }
+  .acsec .courts            { grid-area: 23 / 14 / 30 / 24; }
+
+  .cashflow .copy           { grid-area: 3 / 4 / 19 / 12; }
+
+  .hilton .copy             { grid-area: 1 / 4 / 6 / 18; }
+  .hilton .hampton-logo     { grid-area: 1 / 19 / 5 / 24; }
+  .hilton .brands           { grid-area: 6 / 7 / 18 / 21; }
+
+  .map .demand-map          { grid-area: 1 / 4 / 21 / 24; }
+  .map .cta-download        { grid-area: 22 / 6 / 24 / 13; }
+  .map .cta-sign            { grid-area: 22 / 15 / 24 / 22; }
+
+  .site-footer .hwe-logo    { grid-area: 1 / 4 / 4 / 8; }
+  .site-footer .contact-list { grid-area: 1 / 9 / 8 / 21; }
+}
+
+/* ---------- Phones: single column in reading order ---------- */
+@media (max-width: 767px) {
+  .site-header { position: absolute; padding: 16px 0 0 16px; }
+  .site-header img { height: 38px; }
+
+  .section { min-height: 0; padding: 72px 0; }
+  .hero { min-height: 100svh; }
+
+  .grid { display: flex; flex-direction: column; gap: 16px; padding: 0 16px; }
+  .blk.photo { aspect-ratio: 3 / 2; }
+  .blk.logo { height: 110px; }
+  .blk.logo.small { height: 90px; }
+  .hilton .brands { height: auto; aspect-ratio: 1600 / 989; }
+  .blk.cta { height: 64px; }
+  .btn { font-size: 14px; white-space: normal; }
+
+  .pair { display: flex; gap: 16px; }
+  .pair > .blk { flex: 1; }
+
+  .prop-table th { padding: 18px 5px 18px 10px; }
+  .contact { float: none; width: auto; margin: 16px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
