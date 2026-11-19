@@ -119,14 +119,17 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ---------- Hero: logo in a liquid-glass card ---------- */
-/* The card sits in the open sky at the top right, mirroring the HWE logo's
-   inset, so the building stays clear even at the end of the slow zoom. */
-.hero .grid { position: static; }
-.hero .glass-card {
+/* Desktop: the card is centered in an area of the upper-right sky
+   (the region marked on the design review). Phones override this below. */
+.hero .grid {
   position: absolute;
-  z-index: 1;
-  top: 29px;
-  right: 43.5px;
+  top: 5.8%;
+  right: 3.2%;
+  width: 25%;
+  height: 29.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .glass-card {
   isolation: isolate;
@@ -296,7 +299,7 @@ p:last-child { margin-bottom: 0; }
   /* Phones crop the photo to the building: frame it left of center so the
      facade sign shows, and center the card in the middle of the screen. */
   .hero .section-bg img { object-position: 38% 50%; }
-  .hero .glass-card { inset: 0; width: fit-content; height: fit-content; margin: auto; }
+  .hero .grid { inset: 0; width: auto; height: auto; padding: 0 16px; }
   .glass-card img { width: 150px; }
 
   .grid { display: flex; flex-direction: column; gap: 16px; padding: 0 16px; }
