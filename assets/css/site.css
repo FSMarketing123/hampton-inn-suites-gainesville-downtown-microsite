@@ -398,7 +398,7 @@ p:last-child { margin-bottom: 0; }
   .facts .amenity           { grid-area: 25 / 4 / 35 / 12; }
   .facts .room              { grid-area: 25 / 12 / 35 / 24; }
 
-  .highlights .title        { grid-area: 2 / 5 / 4 / 23; }
+  .highlights .title        { grid-area: 1 / 5 / 2 / 23; }
 
   .uf .campus               { grid-area: 1 / 4 / 17 / 24; }
   .uf .copy                 { grid-area: 17 / 4 / 26 / 24; }
