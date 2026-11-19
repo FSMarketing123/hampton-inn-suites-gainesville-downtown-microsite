@@ -119,12 +119,19 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ---------- Hero: logo in a liquid-glass card ---------- */
-.hero .grid { display: flex; align-items: center; justify-content: center; padding: 0 16px; }
+/* The card sits in the open sky at the top right, mirroring the HWE logo's
+   inset, so the building stays clear even at the end of the slow zoom. */
+.hero .grid { position: static; }
+.hero .glass-card {
+  position: absolute;
+  z-index: 1;
+  top: 29px;
+  right: 43.5px;
+}
 .glass-card {
-  position: relative;
   isolation: isolate;
-  padding: clamp(28px, 3.6vw, 52px) clamp(32px, 4.4vw, 64px);
-  border-radius: clamp(24px, 2.4vw, 36px);
+  padding: clamp(18px, 2vw, 30px) clamp(22px, 2.5vw, 38px);
+  border-radius: clamp(18px, 1.7vw, 26px);
   background:
     linear-gradient(135deg, rgba(255, 255, 255, .22) 0%, rgba(255, 255, 255, .06) 45%, rgba(255, 255, 255, .12) 100%);
   -webkit-backdrop-filter: blur(18px) saturate(170%);
@@ -147,7 +154,7 @@ p:last-child { margin-bottom: 0; }
   pointer-events: none;
 }
 .glass-card h1 { margin: 0; }
-.glass-card img { width: clamp(220px, 30vw, 460px); height: auto; filter: drop-shadow(0 2px 10px rgba(0, 0, 0, .25)); }
+.glass-card img { width: clamp(170px, 18vw, 290px); height: auto; filter: drop-shadow(0 2px 10px rgba(0, 0, 0, .25)); }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .glass-card { background: rgba(20, 20, 20, .45); }
 }
@@ -286,6 +293,9 @@ p:last-child { margin-bottom: 0; }
 
   .section { min-height: 0; padding: 72px 0; }
   .hero { min-height: 100svh; }
+  /* Phones crop the photo to the building, so the card sits over the street instead. */
+  .hero .glass-card { top: auto; bottom: 24px; right: 16px; }
+  .glass-card img { width: 150px; }
 
   .grid { display: flex; flex-direction: column; gap: 16px; padding: 0 16px; }
   .blk.photo { aspect-ratio: 3 / 2; }
