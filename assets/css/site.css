@@ -37,6 +37,7 @@ h3 { font-size: clamp(21px, 1.84vw, 26.44px); line-height: 1.366; }
 p { margin: .5rem 0 1rem; }
 p:last-child { margin-bottom: 0; }
 .center { text-align: center; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .nowrap { white-space: nowrap; }
 
 /* ---------- Header ---------- */
@@ -117,6 +118,40 @@ p:last-child { margin-bottom: 0; }
   background: linear-gradient(to top, rgba(0, 0, 0, .55), transparent);
 }
 
+/* ---------- Hero: logo in a liquid-glass card ---------- */
+.hero .grid { display: flex; align-items: center; justify-content: center; padding: 0 16px; }
+.glass-card {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(28px, 3.6vw, 52px) clamp(32px, 4.4vw, 64px);
+  border-radius: clamp(24px, 2.4vw, 36px);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, .22) 0%, rgba(255, 255, 255, .06) 45%, rgba(255, 255, 255, .12) 100%);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+  backdrop-filter: blur(18px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, .35);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .55),
+    inset 0 -1px 0 rgba(255, 255, 255, .12),
+    inset 0 0 24px rgba(255, 255, 255, .08),
+    0 24px 60px rgba(0, 0, 0, .35);
+}
+/* Specular sheen across the top edge */
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(120% 70% at 20% 0%, rgba(255, 255, 255, .28), transparent 55%);
+  pointer-events: none;
+}
+.glass-card h1 { margin: 0; }
+.glass-card img { width: clamp(220px, 30vw, 460px); height: auto; filter: drop-shadow(0 2px 10px rgba(0, 0, 0, .25)); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-card { background: rgba(20, 20, 20, .45); }
+}
+
 /* ---------- Buttons ---------- */
 .btn {
   display: flex;
@@ -195,8 +230,6 @@ p:last-child { margin-bottom: 0; }
   }
   .pair { display: contents; }
 
-  .hero .hampton-logo       { grid-area: 1 / 11 / 5 / 17; }
-  .hero .title              { grid-area: 5 / 7 / 8 / 21; }
 
   .intro .summary           { grid-area: 1 / 6 / 8 / 22; }
   .intro .cta-download      { grid-area: 9 / 6 / 11 / 13; }
