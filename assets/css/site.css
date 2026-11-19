@@ -84,8 +84,8 @@ p:last-child { margin-bottom: 0; }
 
 .hero       { min-height: 100vh; background: var(--hp-deep); --overlay: var(--black); --overlay-opacity: .25; }
 .intro      { min-height: 40vh;  background: var(--white); color: var(--ink); }
-.intro .btn { background: var(--hp-navy); border-color: var(--hp-navy); }
-.intro .btn:focus-visible { outline-color: var(--hp-navy); }
+.intro .btn, .map .btn { background: var(--hp-navy); border-color: var(--hp-navy); }
+.intro .btn:focus-visible, .map .btn:focus-visible { outline-color: var(--hp-navy); }
 .facts      { background: var(--hp-deep); }
 .highlights { min-height: 33vh;  background: var(--white); --overlay: var(--white); --overlay-opacity: .15; }
 .uf         { background: var(--hp-sky); color: var(--hp-navy); }
@@ -97,7 +97,7 @@ p:last-child { margin-bottom: 0; }
 .cashflow h3 { color: var(--hp-sky); }
 .hilton     { min-height: 66vh;  background: var(--hp-deep); }
 .hilton .copy p { text-align: justify; }
-.map        { min-height: 66vh;  background: var(--hp-blue); }
+.map        { min-height: 66vh;  background: var(--white); color: var(--ink); }
 .site-footer { min-height: 33vh; background: var(--hp-navy); padding: clamp(40px, 6.2vw, 89px) 0; }
 
 /* ---------- Blocks ---------- */
