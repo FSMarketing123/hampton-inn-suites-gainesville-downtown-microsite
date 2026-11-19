@@ -411,6 +411,9 @@ p:last-child { margin-bottom: 0; }
   .uf .ballpark             { grid-area: 37 / 18 / 43 / 24; }
 
   .medical .ufhealth-logo   { grid-area: 2 / 4 / 6 / 10; }
+  /* Breathing room: logo clear of the copy, copy clear of the photos above and below. */
+  .medical .ufhealth-logo   { margin-right: clamp(24px, 2.6vw, 44px); }
+  .uf .copy, .acsec .copy   { margin-block: clamp(20px, 2.4vw, 32px); }
   .medical .gator           { grid-area: 6 / 5 / 11 / 8; }
   .medical .copy            { grid-area: 1 / 10 / 7 / 24; }
   .medical .campus          { grid-area: 7 / 10 / 12 / 17; }
