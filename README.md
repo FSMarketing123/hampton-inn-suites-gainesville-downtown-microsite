@@ -8,7 +8,7 @@ Hampton Inn & Suites Gainesville Downtown, Gainesville, Florida.
 
 ## Stack
 
-Static single page. No build step, no dependencies, no JavaScript. Served by
+Static single page. No build step, no dependencies; one small script (`assets/js/reveal.js`) for the scale-in animation as blocks scroll into view. Served by
 GitHub Pages from `main`.
 
 ```
@@ -17,6 +17,7 @@ CNAME                 custom domain
 .nojekyll             bypass Jekyll processing
 assets/
   css/site.css        all styles; desktop grid positions are in one labeled block
+  js/reveal.js        scale-in reveal on scroll (skipped for reduced-motion users)
   img/*.webp          photography and logos
 ```
 

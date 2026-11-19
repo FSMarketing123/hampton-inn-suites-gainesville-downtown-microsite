@@ -262,6 +262,16 @@ p:last-child { margin-bottom: 0; }
   .contact { float: none; width: auto; margin: 16px 0; }
 }
 
+/* ---------- Scale-in reveal (enabled by the .reveal class, see assets/js/reveal.js) ---------- */
+.reveal .blk {
+  opacity: 0;
+  transform: scale(.92);
+  transition:
+    opacity .8s ease var(--reveal-delay, 0s),
+    transform 1s cubic-bezier(.2, .7, .2, 1) var(--reveal-delay, 0s);
+}
+.reveal .blk.is-visible { opacity: 1; transform: none; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn { transition: none; }
