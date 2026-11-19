@@ -196,7 +196,17 @@ p:last-child { margin-bottom: 0; }
   min-width: 0;
   height: 88px;
 }
-.hilton-logo-grid > li > img { width: 100%; max-width: 128px; height: 80px; object-fit: contain; }
+.hilton-logo-grid > li > img {
+  width: 100%;
+  max-width: 128px;
+  height: 80px;
+  object-fit: contain;
+  transition: transform .25s cubic-bezier(.2, .7, .2, 1);
+}
+/* Hover: each logo grows, then eases back when the pointer leaves. */
+@media (hover: hover) {
+  .hilton-logo-grid > li:hover > img { transform: scale(1.25); }
+}
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -363,6 +373,7 @@ p:last-child { margin-bottom: 0; }
 .reveal .blk.is-visible { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
+  .hilton-logo-grid > li > img { transition: none; }
   .section-bg.zoom img { animation: none; }
   html { scroll-behavior: auto; }
   .btn { transition: none; }
