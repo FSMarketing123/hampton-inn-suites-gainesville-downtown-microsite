@@ -235,7 +235,7 @@ p:last-child { margin-bottom: 0; }
   .map .cta-download        { grid-area: 22 / 6 / 24 / 13; }
   .map .cta-sign            { grid-area: 22 / 15 / 24 / 22; }
 
-  .site-footer .hwe-logo    { grid-area: 1 / 4 / 4 / 8; }
+  .site-footer .hwe-logo    { grid-area: 1 / 4 / 8 / 8; align-self: center; height: clamp(80px, 7.7vw, 110px); }
   .site-footer .contact-list { grid-area: 1 / 9 / 8 / 21; }
 }
 
