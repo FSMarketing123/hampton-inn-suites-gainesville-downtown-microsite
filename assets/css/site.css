@@ -293,8 +293,10 @@ p:last-child { margin-bottom: 0; }
 
   .section { min-height: 0; padding: 72px 0; }
   .hero { min-height: 100svh; }
-  /* Phones crop the photo to the building, so the card sits over the street instead. */
-  .hero .glass-card { top: auto; bottom: 24px; right: 16px; }
+  /* Phones crop the photo to the building: frame it left of center so the
+     facade sign shows, and center the card over the street below. */
+  .hero .section-bg img { object-position: 38% 50%; }
+  .hero .glass-card { top: auto; bottom: 24px; left: 0; right: 0; width: fit-content; margin-inline: auto; }
   .glass-card img { width: 150px; }
 
   .grid { display: flex; flex-direction: column; gap: 16px; padding: 0 16px; }
