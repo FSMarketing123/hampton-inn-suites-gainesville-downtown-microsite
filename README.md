@@ -19,6 +19,7 @@ assets/
   css/site.css        all styles; desktop grid positions are in one labeled block
   js/reveal.js        scale-in reveal on scroll (skipped for reduced-motion users)
   js/parallax.js      parallax for [data-parallax] section backgrounds (Investment Highlights); the hero uses a CSS slow zoom
+  js/header-fade.js   fades the fixed HWE logo out while scrolling down
   img/*.webp          photography and logos
 ```
 
