@@ -87,7 +87,7 @@ p:last-child { margin-bottom: 0; }
 .intro .btn, .map .btn { background: var(--hp-navy); border-color: var(--hp-navy); }
 .intro .btn:focus-visible, .map .btn:focus-visible { outline-color: var(--hp-navy); }
 .facts      { background: var(--hp-deep); }
-.highlights { min-height: 800px;  background: var(--white); --overlay: var(--white); --overlay-opacity: .15; }
+.highlights { min-height: 450px;  background: var(--white); --overlay: var(--white); --overlay-opacity: .15; }
 .uf         { background: var(--hp-sky); color: var(--hp-navy); }
 .uf h3      { color: var(--hp-blue); }
 .medical    { min-height: 66vh;  background: var(--hp-navy); }
