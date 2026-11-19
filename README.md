@@ -8,7 +8,7 @@ Hampton Inn & Suites Gainesville Downtown, Gainesville, Florida.
 
 ## Stack
 
-Static single page. No build step, no dependencies; one small script (`assets/js/reveal.js`) for the scale-in animation as blocks scroll into view. Served by
+Static single page. No build step, no dependencies; two small scripts: `assets/js/reveal.js` (scale-in animation as blocks scroll into view) and `assets/js/parallax.js` (background parallax). Served by
 GitHub Pages from `main`.
 
 ```
@@ -18,6 +18,7 @@ CNAME                 custom domain
 assets/
   css/site.css        all styles; desktop grid positions are in one labeled block
   js/reveal.js        scale-in reveal on scroll (skipped for reduced-motion users)
+  js/parallax.js      parallax for [data-parallax] section backgrounds (Investment Highlights)
   img/*.webp          photography and logos
 ```
 
