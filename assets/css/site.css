@@ -173,9 +173,10 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ---------- Hilton brand logo grid (30 white SVGs, assets/img/hilton-logos) ----------
-   Full section width, eight logos per row (8 x 4). A wrapping flex row is used
-   instead of CSS grid so the shorter last row (6 logos) centers itself. */
-.hilton .brands { width: 100%; margin-top: clamp(32px, 4vw, 64px); }
+   Spans the same content columns as the section grid (lines 4-24, matching the
+   copy and the Hampton logo above), eight logos per row (8 x 4). A wrapping flex
+   row is used so the shorter last row (6 logos) centers itself. */
+.hilton .brands { margin-top: clamp(24px, 3vw, 48px); }
 .hilton-logo-grid {
   --cols: 8;
   --col-gap: clamp(12px, 2.5vw, 40px);
@@ -185,7 +186,7 @@ p:last-child { margin-bottom: 0; }
   gap: 28px var(--col-gap);
   width: 100%;
   margin: 0;
-  padding: 0 clamp(16px, 3vw, 48px);
+  padding: 0;
   list-style: none;
 }
 .hilton-logo-grid > li {
@@ -325,6 +326,7 @@ p:last-child { margin-bottom: 0; }
 
   .hilton .copy             { grid-area: 1 / 4 / 6 / 18; }
   .hilton .hampton-logo     { grid-area: 1 / 19 / 5 / 24; }
+  .hilton .brands           { grid-column: 4 / 24; grid-row: 7; }
 
   .map .demand-map          { grid-area: 1 / 4 / 21 / 24; }
   .map .cta-download        { grid-area: 22 / 6 / 24 / 13; }
