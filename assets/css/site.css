@@ -172,6 +172,22 @@ p:last-child { margin-bottom: 0; }
   .glass-card { background: rgba(20, 20, 20, .45); }
 }
 
+/* ---------- Hilton brand logo grid (30 white SVGs, assets/img/hilton-logos) ---------- */
+.hilton-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: repeat(5, minmax(112px, auto));
+  column-gap: clamp(8px, 3vw, 32px);
+  row-gap: 24px;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  list-style: none;
+}
+.hilton-logo-grid > li { display: flex; align-items: center; justify-content: center; min-width: 0; margin: 0; padding: 0; }
+.hilton-logo-grid > li > img { width: 100%; max-width: 96px; height: 80px; object-fit: contain; }
+
 /* ---------- Buttons ---------- */
 .btn {
   display: flex;
@@ -289,7 +305,7 @@ p:last-child { margin-bottom: 0; }
 
   .hilton .copy             { grid-area: 1 / 4 / 6 / 18; }
   .hilton .hampton-logo     { grid-area: 1 / 19 / 5 / 24; }
-  .hilton .brands           { grid-area: 6 / 7 / 18 / 21; }
+  .hilton .brands           { grid-area: 6 / 4 / 18 / 24; align-self: center; }
 
   .map .demand-map          { grid-area: 1 / 4 / 21 / 24; }
   .map .cta-download        { grid-area: 22 / 6 / 24 / 13; }
@@ -316,7 +332,7 @@ p:last-child { margin-bottom: 0; }
   .blk.photo { aspect-ratio: 3 / 2; }
   .blk.logo { height: 110px; }
   .blk.logo.small { height: 90px; }
-  .hilton .brands { height: auto; aspect-ratio: 1600 / 989; }
+  .hilton-logo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: minmax(88px, auto); padding: 16px 0; }
   .blk.cta { height: 64px; }
   .btn { font-size: 14px; white-space: normal; }
 
