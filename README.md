@@ -18,7 +18,7 @@ CNAME                 custom domain
 assets/
   css/site.css        all styles; desktop grid positions are in one labeled block
   js/reveal.js        scale-in reveal on scroll (skipped for reduced-motion users)
-  js/parallax.js      parallax for [data-parallax] section backgrounds (Investment Highlights)
+  js/parallax.js      parallax for [data-parallax] section backgrounds (hero, Investment Highlights)
   img/*.webp          photography and logos
 ```
 

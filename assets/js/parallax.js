@@ -29,6 +29,14 @@
     if (!ticking) { ticking = true; requestAnimationFrame(update); }
   }
 
+  // Make each image taller than its section by 2 × range so it never shows an edge.
+  layers.forEach(function (bg) {
+    var range = parseFloat(bg.getAttribute('data-parallax')) || 0.2;
+    var img = bg.querySelector('img');
+    img.style.top = (-range * 100) + '%';
+    img.style.height = (100 + range * 200) + '%';
+  });
+
   document.documentElement.classList.add('parallax');
 
   if ('IntersectionObserver' in window) {
