@@ -64,6 +64,10 @@ p:last-child { margin-bottom: 0; }
 /* Parallax layers: assets/js/parallax.js sizes each image taller than its section
    (by twice its data-parallax value) so it can drift without showing edges. */
 .parallax .section-bg[data-parallax] img { position: absolute; left: 0; will-change: transform; }
+
+/* Hero: slow zoom-in on load. */
+.section-bg.zoom img { transform-origin: 50% 50%; animation: slow-zoom 24s cubic-bezier(.25, .1, .25, 1) both; }
+@keyframes slow-zoom { from { transform: scale(1); } to { transform: scale(1.15); } }
 .section-bg::after {
   content: "";
   position: absolute;
@@ -276,6 +280,7 @@ p:last-child { margin-bottom: 0; }
 .reveal .blk.is-visible { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
+  .section-bg.zoom img { animation: none; }
   html { scroll-behavior: auto; }
   .btn { transition: none; }
 }
