@@ -383,7 +383,9 @@ p:last-child { margin-bottom: 0; }
   .intro .cta-sign          { grid-area: 9 / 15 / 11 / 22; }
 
   .facts .hampton-logo      { grid-area: 1 / 4 / 4 / 12; }
-  .facts .table             { grid-area: 4 / 4 / 25 / 12; }
+  .facts .table             { grid-area: 4 / 4 / 25 / 12; align-self: stretch; }
+  /* Tiles stretch to the bottom of the lobby photo; spare height is shared by every row. */
+  .facts .facts-grid        { height: 100%; align-content: stretch; }
   .facts .exterior          { grid-area: 1 / 12 / 13 / 24; }
   .facts .lobby             { grid-area: 13 / 12 / 25 / 24; }
   .facts .amenity           { grid-area: 25 / 4 / 35 / 12; }
