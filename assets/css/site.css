@@ -235,6 +235,8 @@ p:last-child { margin-bottom: 0; }
 .btn:focus-visible { outline: 3px solid var(--white); outline-offset: 3px; }
 
 /* ---------- Property facts: tiles that lift, glow and grow on hover ---------- */
+/* Breathing room between the Hampton logo and the first tile. */
+.facts .table { margin-top: clamp(20px, 2.2vw, 36px); }
 .facts-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
