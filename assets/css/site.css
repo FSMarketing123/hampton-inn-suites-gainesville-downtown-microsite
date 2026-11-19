@@ -88,6 +88,7 @@ p:last-child { margin-bottom: 0; }
 .intro .btn:focus-visible, .map .btn:focus-visible { outline-color: var(--hp-navy); }
 .facts      { background: var(--hp-deep); }
 .highlights { min-height: 450px;  background: var(--white); --overlay: var(--white); --overlay-opacity: .15; }
+.highlights .section-bg img { object-position: 50% 92%; } /* favor the street over the sky */
 .uf         { background: var(--hp-sky); color: var(--hp-navy); }
 .uf h3      { color: var(--hp-blue); }
 .medical    { min-height: 66vh;  background: var(--hp-navy); }
